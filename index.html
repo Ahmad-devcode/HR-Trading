@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>HR Trader | Professional Forex & Trading Solutions</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Trading-Dashboard/dashboard.css">
+    <link rel="stylesheet" href="/loader/loader.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo"><img src="/trading-pic/HR-sitelogo.png" alt="HR Trader Logo"></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <nav class="navbar">
+            <a href="#home" class="active navlink">Home</a>
+            <a href="#about" class="navlink">About</a>
+            <a href="#services" class="navlink">Services</a>
+            <a href="#portfolio" class="navlink">Financial Plan</a>
+            <a href="#contact" class="navlink">Contact</a>
+            <a href="#contact" class="nav-cta"><i class='bx bx-signal-5'></i> Live Signals</a>
+        </nav>
+    </header>
+
+    <!-- ============================================================================= -->
+    <!-- PROFESSIONAL FULLSCREEN LOADER (appears on load, hides when everything ready) -->
+    <div id="professionalLoader" class="loader-overlay">
+        <div class="loader-card">
+            <div class="loader-brand">
+                <div class="loader-icon">
+                    <img src="/trading-pic/HR-sitelogo.png" alt="HR Trader Logo">
+                </div>
+            </div>
+
+            <!-- Miniature real-time ticker -->
+            <div class="mini-ticker">
+                <div class="ticker-scroll" id="loaderTicker">
+                    <!-- populated via js -->
+                </div>
+            </div>
+
+            <!-- Shimmer loading skeleton -->
+            <div class="skeleton-group">
+                <div class="skeleton-line">
+                    <div class="skeleton-left">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                    <div class="skeleton-right">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                </div>
+                <div class="skeleton-line">
+                    <div class="skeleton-left">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                    <div class="skeleton-right wide">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                </div>
+                <div class="skeleton-line">
+                    <div class="skeleton-left">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                    <div class="skeleton-right">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                </div>
+                <div class="skeleton-line">
+                    <div class="skeleton-left">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                    <div class="skeleton-right">loading...
+                        <div class="shimmer-effect"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress with dynamic percentage -->
+            <div class="load-progress-container">
+                <div class="progress-stats">
+                    <span id="loadPhase">INITIALIZING ENGINE</span>
+                    <span id="loadPercent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="loadFillBar"></div>
+                </div>
+            </div>
+
+            <div class="loader-footer">
+                <div class="live-status">
+                    <div class="pulse-led"></div>
+                    <span>LOW LATENCY MODE</span>
+                </div>
+                <div class="exchange-cred">
+                    NASDAQ · CME · LMAX
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================================= -->
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+        <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="/trading-pic/trading_clip1.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="badge">TRADING SOLUTIONS WITH HASEEB RASOOL</div>
+            <h1>Master The Markets With <span>HR Trader</span></h1>
+            <p>A Profitable Trader with a Proven Track Record of Success. Explore expert strategies, market insights,
+                and consistent profit blueprints.</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">89%</span>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+                <div class="stat-item"><span class="stat-number">10+</span>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item"><span class="stat-number">5000+</span>
+                    <div class="stat-label">Active Traders</div>
+                </div>
+            </div>
+            <a href="#contact" class="btn">Start Trading Now →</a>
+            <a href="https://wa.me/923044126037" target="_blank" class="btn enroll-btn">Enroll Now →</a>
+        </div>
+        <div class="hero-img"><img src="/trading-pic/trading2.avif" alt="HR Trader"></div>
+    </section>
+
+    <!-- MARKET TICKER -->
+    <section class="market-ticker" aria-label="Live Market Ticker">
+        <div class="ticker-track" id="tickerTrack">
+            <div class="ticker-item"><span class="ticker-symbol">EUR/USD</span><span
+                    class="ticker-price">1.0892</span><span class="ticker-change up">+0.18%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">GBP/USD</span><span
+                    class="ticker-price">1.2711</span><span class="ticker-change down">-0.09%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">USD/JPY</span><span
+                    class="ticker-price">155.42</span><span class="ticker-change up">+0.31%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">XAU/USD</span><span
+                    class="ticker-price">2340.55</span><span class="ticker-change up">+0.44%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">BTC/USD</span><span
+                    class="ticker-price">64210.80</span><span class="ticker-change down">-0.52%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">US30</span><span
+                    class="ticker-price">38765.2</span><span class="ticker-change up">+0.22%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">EUR/USD</span><span
+                    class="ticker-price">1.0892</span><span class="ticker-change up">+0.18%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">GBP/USD</span><span
+                    class="ticker-price">1.2711</span><span class="ticker-change down">-0.09%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">USD/JPY</span><span
+                    class="ticker-price">155.42</span><span class="ticker-change up">+0.31%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">XAU/USD</span><span
+                    class="ticker-price">2340.55</span><span class="ticker-change up">+0.44%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">BTC/USD</span><span
+                    class="ticker-price">64210.80</span><span class="ticker-change down">-0.52%</span></div>
+            <div class="ticker-item"><span class="ticker-symbol">US30</span><span
+                    class="ticker-price">38765.2</span><span class="ticker-change up">+0.22%</span></div>
+        </div>
+    </section>
+
+    <!-- ANALYTICS + DEMO -->
+    <section class="analytics-demo">
+        <div class="section-header">
+            <h2>Market <span>Analytics</span> & Demo Trading</h2>
+        </div>
+        <div class="dashboard-container">
+            <div class="glass-panel">
+                <div class="dashboard-header">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <h2><i class='bx bx-line-chart'></i> Live Trading Dashboard</h2>
+                        <span class="live-badge">● LIVE DATA</span>
+                    </div>
+                    <div class="select-wrapper">
+                        <select id="coinSelector" aria-label="Select asset">
+                            <option value="gold"> Gold (XAU/USD)</option>
+                            <option value="silver"> Silver (XAG/USD)</option>
+                            <option value="btcusdt"> Bitcoin (BTC/USDT)</option>
+                            <option value="ethusdt"> Ethereum (ETH/USDT)</option>
+                            <option value="bnbusdt"> Binance Coin (BNB/USDT)</option>
+                            <option value="solusdt"> Solana (SOL/USDT)</option>
+                            <option value="xrpusdt"> XRP (XRP/USDT)</option>
+                            <option value="adausdt"> Cardano (ADA/USDT)</option>
+                            <option value="dogeusdt"> Dogecoin (DOGE/USDT)</option>
+                            <option value="ltcusdt"> Litecoin (LTC/USDT)</option>
+                            <option value="avaxusdt"> Avalanche (AVAX/USDT)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 4 responsive metric cards -->
+                <div class="stats-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">CURRENT PRICE</div>
+                        <div class="metric-value" id="priceDisplay">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">24H CHANGE</div>
+                        <div class="metric-value" id="changeDisplay">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">24H HIGH</div>
+                        <div class="metric-value" id="highDisplay">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">24H LOW</div>
+                        <div class="metric-value" id="lowDisplay">--</div>
+                    </div>
+                </div>
+
+                <!-- TradingView chart widget iframe -->
+                <div class="chart-wrapper">
+                    <iframe id="tradingChart" title="live chart" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRADING TOOLS -->
+    <section class="trading-tools">
+        <div class="section-header">
+            <h2>Your Trading <span>Edge</span> & Risk Tool</h2>
+        </div>
+        <div class="tools-grid">
+            <div class="edge-card">
+                <h3>Institutional Grade Workflow</h3>
+                <p>Built for disciplined execution, protected downside, and repeatable profits in volatile markets.</p>
+                <div class="edge-list">
+                    <div class="edge-item">
+                        <i class='bx bx-line-chart'></i>
+                        <h4>Multi-Timeframe Bias</h4>
+                        <p>Top-down trend mapping before entries.</p>
+                    </div>
+                    <div class="edge-item">
+                        <i class='bx bx-shield-quarter'></i>
+                        <h4>Capital Protection</h4>
+                        <p>Strict stop-loss and risk cap controls.</p>
+                    </div>
+                    <div class="edge-item">
+                        <i class='bx bx-bell'></i>
+                        <h4>Signal Confirmation</h4>
+                        <p>Entry only after momentum alignment.</p>
+                    </div>
+                    <div class="edge-item">
+                        <i class='bx bx-brain'></i>
+                        <h4>Psychology Framework</h4>
+                        <p>Rules to reduce revenge and overtrading.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="risk-card">
+                <h3>Position Size Calculator</h3>
+                <p>Use this quick tool to estimate safe lot size and max loss per trade.</p>
+                <div class="risk-form">
+                    <input type="number" id="accountBalance" placeholder="Account Balance (USD)" value="1000" min="1">
+                    <input type="number" id="riskPercent" placeholder="Risk % Per Trade" value="1" min="0.1" step="0.1">
+                    <input type="number" id="stopLossPips" placeholder="Stop Loss (Pips)" value="30" min="1">
+                    <button class="btn" id="calcRiskBtn" type="button">Calculate Risk</button>
+                </div>
+                <div class="risk-output" id="riskOutput">
+                    Risk amount: <strong>$10.00</strong> | Suggested lot size: <strong>0.03 lots</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-pro" id="about">
+        <div class="about-img"><img src="/trading-pic/trading6.avif" alt="Professional Trading"></div>
+        <div class="about-content">
+            <div class="section-header" style="text-align:left; margin-bottom:1rem;">
+                <h2>About <span>Me</span></h2>
+            </div>
+            <h3>Your Partner in Financial Growth</h3>
+            <p>I'm a skilled and profitable trader, consistently generating returns in Forex, Indices, and Commodities.
+                My strategies are refined, disciplined, and market-adaptive. With over a decade of experience, I've
+                helped thousands of traders achieve their financial goals.</p>
+            <ul class="feature-list">
+                <li><i class="bx bx-check-circle" style="color:var(--main-color)"></i> 10+ Years Institutional
+                    Experience</li>
+                <li><i class="bx bx-check-circle" style="color:var(--main-color)"></i> High Win-rate Scalping & Swing
+                    Systems</li>
+                <li><i class="bx bx-check-circle" style="color:var(--main-color)"></i> Daily Market Analysis & Signals
+                </li>
+            </ul><a href="#" class="btn">Discover My Method</a>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>My <span>Services</span></h2>
+        </div>
+        <div class="services-container">
+            <div class="services-box"><i class='bx bx-code-alt'></i>
+                <h3>Free Coaching</h3>
+                <p>Get Free Training via HR Forex Academy YouTube channel.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="services-box"><i class='bx bxs-paint'></i>
+                <h3>Boost Profits</h3>
+                <p>Advanced courses to boost your Trading Profits.</p>
+                <a href="#" class="btn">Explore</a>
+            </div>
+            <div class="services-box"><i class='bx bx-bar-chart-alt'></i>
+                <h3>Best Forex Analysis</h3>
+                <p>Free Forex Analysis & Trading Principles.</p>
+                <a href="#" class="btn">ViewAnalysis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCIAL PLAN -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <h2>Our <span>Financial Plan</span></h2>
+        </div>
+        <div class="portfolio-container">
+            <div class="portfolio-box"><img src="/trading-pic/tradin1.avif" alt="Long Term">
+                <div class="portfolio-lawyer">
+                    <h4>Long Time Trading</h4>
+                    <p>Proven wealth compounding strategies.</p>
+                </div>
+            </div>
+            <div class="portfolio-box"><img src="/trading-pic/trading2.avif" alt="Courses">
+                <div class="portfolio-lawyer">
+                    <h4>Trading Courses</h4>
+                    <p>Expert-led training programs.</p>
+                </div>
+            </div>
+            <div class="portfolio-box"><img src="/trading-pic/trading6.avif" alt="Risk">
+                <div class="portfolio-lawyer">
+                    <h4>Risk Management</h4>
+                    <p>Capital protection techniques.</p>
+                </div>
+            </div>
+            <div class="portfolio-box"><img src="/trading-pic/trading5.jpg" alt="Growth">
+                <div class="portfolio-lawyer">
+                    <h4>Small Account Growth</h4>
+                    <p>Sustainable wealth building.</p>
+                </div>
+            </div>
+            <div class="portfolio-box"><img src="/trading-pic/trading4.avif" alt="Scalping">
+                <div class="portfolio-lawyer">
+                    <h4>Scalping Strategy</h4>
+                    <p>High-frequency precision trades.</p>
+                </div>
+            </div>
+            <div class="portfolio-box"><img src="/trading-pic/trading3.avif" alt="Signals">
+                <div class="portfolio-lawyer">
+                    <h4>Trading Signals</h4>
+                    <p>AI-powered real-time alerts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <div class="testimonial-container">
+        <div class="section-header">
+            <h2>What Our <span>Clients Say</span></h2>
+        </div>
+        <div class="testimonial-wrapper">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatar"><img src="/images/teru4.jpg" alt="Tatheer"></div>
+                            <h3>Tatheer Nawaz</h3>
+                            <div class="testimonial-role">Professional Trader</div>
+                            <div class="quote-icon"><i class="bx bxs-quote-left"></i></div>
+                            <p>"I've never seen such consistent profits. Their guidance has been invaluable in helping
+                                me achieve financial freedom."</p>
+                            <div class="rating-stars"><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i
+                                    class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatar"><img src="/images/myimg23.jpg" alt="Shan"></div>
+                            <h3>Shan Muhammad</h3>
+                            <div class="testimonial-role">Forex Fund Manager</div>
+                            <div class="quote-icon"><i class="bx bxs-quote-left"></i></div>
+                            <p>"I've increased my trading profits by 500% since working with them. The risk management
+                                techniques are unmatched."</p>
+                            <div class="rating-stars"><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i
+                                    class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatar"><img src="/images/testimonial_02.jpg" alt="Ali"></div>
+                            <h3>Ali Rizwan</h3>
+                            <div class="testimonial-role">Independent Investor</div>
+                            <div class="quote-icon"><i class="bx bxs-quote-left"></i></div>
+                            <p>"Their trading signals have been accurate and timely. I highly recommend their services
+                                to anyone looking to succeed."</p>
+                            <div class="rating-stars"><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i
+                                    class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-pro" id="contact">
+        <div class="section-header">
+            <h2>Get In <span>Touch</span></h2>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <div class="contact-detail"><i class='bx bxl-whatsapp'></i>
+                    <p>+92 304 4126037</p>
+                </div>
+                <div class="contact-detail"><i class='bx bx-envelope'></i>
+                    <p>hrttradingacademy@gmail.com</p>
+                </div>
+                <div class="contact-detail"><i class='bx bx-map'></i>
+                    <p>Dubai, UAE / Lahore, Pakistan</p>
+                </div>
+                <div class="contact-detail"><i class='bx bx-time'></i>
+                    <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="social-pro-links">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/923044126037" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://t.me/HRTTrader" target="_blank"><i class='bx bxl-telegram'></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form">
+
+                    <div class="input-row">
+                        <input type="text" name="fullName" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">
+                        Send Message →
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/923044126037" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://t.me/HRTTrader" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+        </a>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <div class="back-to-top" id="backToTop"><i class='bx bx-up-arrow-alt'></i></div>
+
+    <!-- ========== PROFESSIONAL HIGH-LEVEL FOOTER ========== -->
+    <footer class="footer-pro">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <h3>HR Trader</h3>
+                <p>Empowering traders worldwide with professional forex analysis, advanced strategies, and proven
+                    success methodologies since 2015.</p>
+                <div class="footer-social-links">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://t.me/HRTTrader" target="_blank"><i class='bx bxl-telegram'></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home"><i class='bx bx-chevron-right'></i> Home</a></li>
+                    <li><a href="#about"><i class='bx bx-chevron-right'></i> About Us</a></li>
+                    <li><a href="#services"><i class='bx bx-chevron-right'></i> Services</a></li>
+                    <li><a href="#portfolio"><i class='bx bx-chevron-right'></i> Financial Plan</a></li>
+                    <li><a href="#contact"><i class='bx bx-chevron-right'></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#"><i class='bx bx-chevron-right'></i> Free Coaching</a></li>
+                    <li><a href="#"><i class='bx bx-chevron-right'></i> Trading Courses</a></li>
+                    <li><a href="#"><i class='bx bx-chevron-right'></i> Forex Analysis</a></li>
+                    <li><a href="#"><i class='bx bx-chevron-right'></i> Risk Management</a></li>
+                    <li><a href="#"><i class='bx bx-chevron-right'></i> Trading Signals</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <div class="contact-item"><i class='bx bx-phone-call'></i><span>+92 304 4126037</span></div>
+                <div class="contact-item"><i class='bx bx-envelope'></i><span>hrttradingacademy@gmail.com</span></div>
+                <div class="contact-item"><i class='bx bx-map'></i><span>Dubai, UAE / Lahore, Pakistan</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 HR Trader — All Rights Reserved. High-performance trading solutions.</div>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/main.js"></script>
+    <script src="/loader/loader.js"></script>
+    <script src="/Trading-Dashboard/dashboard.js"></script>
+
+</body>
+
+</html>
